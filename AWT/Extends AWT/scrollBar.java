@@ -1,3 +1,4 @@
+//2. Create a scroll bar on applet. When we change its position the current thumb position of it //will get displayed on the status bar.
 
 import java.awt.*;
 import java.awt.event.*;
@@ -5,32 +6,31 @@ import java.applet.*;
 /*<applet code="scrollBar" width=300 height=300>
 </applet>*/
 
-public class scrollBar extends Applet implements AdjustmentListener , MouseMotionListener 
+public class scrollBar extends Applet
 {
-Scrollbar sb;
+Mbar mb;
 
 public void init()
 {
-           sb=new Scrollbar(Scrollbar.HORIZONTAL,0,1,0,500);
-           add(sb);
-	sb.addAdjustmentListener(this);
-	addMouseMotionListener(this);
+           mb=new Mbar(Scrollbar.HORIZONTAL,0,1,0,100);
+           add(mb);
 }
 
-public void  adjustmentValueChanged(AdjustmentEvent ae)
+class Mbar extends Scrollbar
 {
-	repaint();
+public Mbar(int style,int i,int t,int min,int max)
+{
+super(style,i,t,min,max);
+enableEvents(AWTEvent.ADJUSTMENT_EVENT_MASK);
 }
-public void mouseDragged(MouseEvent m){
-	int X = m.getX();
-	sb.setValue(X);
+protected void processAdjustmentEvent(AdjustmentEvent ae)
+{
+
+showStatus("Thumb Value is " +ae.getValue());
+setValue(getValue());
+super.processAdjustmentEvent(ae);
 
 }
-public void mouseMoved (MouseEvent me){
-	
-}
-public void paint(Graphics g ){
-g.drawString (" value of sb :"+ sb.getValue(), 200,200);
 }
 }
 

@@ -10,19 +10,16 @@ public class SimpleB extends Applet implements ActionListener {
 
     public void init () 
    {
-        b = new Button ("One");
-	add(b);
+        add (b = new Button ("One"));
         b.addActionListener (this);
-        b = new Button ("Two");
-	add(b);
+        add (b = new Button ("Two"));
         b.addActionListener (this);
     }
 
     public void actionPerformed (ActionEvent e)   //getting action command
    {
 
-         String s= e.getActionCommand();
-
+        String s = e.getActionCommand();
         
 
         if ("One".equals(s)) {  msg = "one clicked"; repaint(); }
