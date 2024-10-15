@@ -1,0 +1,15 @@
+import java.applet.*;
+import java.awt.*;
+import java.awt.event.*;
+
+/*<applet code = "sampleTextArea"  width = 600 height=600></applet>*/
+
+public class sampleTextArea extends Applet 
+{
+  public void init()
+  {
+	String str="";
+        TextArea txt=new TextArea(str,10,30);
+
+  }
+}
