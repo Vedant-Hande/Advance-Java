@@ -7,7 +7,7 @@ class SampleFrame extends Frame {
 
 }
 
-public class awtFrames  extends Frame{
+public class awtFrames1 extends Frame {
 
     public static void main(String args[]) {
         Frame f = new SampleFrame();

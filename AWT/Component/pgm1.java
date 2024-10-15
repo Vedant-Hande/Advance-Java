@@ -1,4 +1,4 @@
-Program No=1-1
+// Program No=1-1
 import  java.awt.*;
 import  java.applet.*;
 public class pgm1 extends Applet

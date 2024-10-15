@@ -9,7 +9,7 @@ import java.awt.Font;
 */
 
 
-public class sfont extends Applet
+public class sfont1 extends Applet
 {
 public void paint(Graphics g)
 {
